@@ -3,8 +3,8 @@ For setups for projects
 
 # RPI Wireless Printer server
 See these two websites with clear explanations  
--https://pimylifeup.com/raspberry-pi-print-server/  
--https://www.techradar.com/how-to/computing/how-to-turn-the-raspberry-pi-into-a-wireless-printer-server-1312717
+-[https://pimylifeup.com/raspberry-pi-print-server/]  
+-[https://www.techradar.com/how-to/computing/how-to-turn-the-raspberry-pi-into-a-wireless-printer-server-1312717]
 
 ## jellyfin
 Instructions here  
