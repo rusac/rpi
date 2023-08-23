@@ -7,6 +7,7 @@ See these two websites with clear explanations
 -[https://www.techradar.com/how-to/computing/how-to-turn-the-raspberry-pi-into-a-wireless-printer-server-1312717](https://www.techradar.com/how-to/computing/how-to-turn-the-raspberry-pi-into-a-wireless-printer-server-1312717)
 
 # Local networked media server
+## Hard drive idle issue
 
 ## jellyfin
 -[https://pimylifeup.com/raspberry-pi-jellyfin/](https://pimylifeup.com/raspberry-pi-jellyfin/)
@@ -15,9 +16,8 @@ See these two websites with clear explanations
 -[https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/](https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/)  
 -[https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/](https://openwrt.org/docs/guide-user/services/media_server/minidlna)
 
+## piHole
 
 ## RetroPi
-
-## Hard drive idle issue
 
 ## rsync
