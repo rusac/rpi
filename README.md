@@ -8,16 +8,14 @@ See these two websites with clear explanations
 
 # Local networked media server
 ## Hard drive idle issue
-
 ## jellyfin
 -[https://pimylifeup.com/raspberry-pi-jellyfin/](https://pimylifeup.com/raspberry-pi-jellyfin/)
-
 ## miniDLNA
 -[https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/](https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/)  
 -[https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/](https://openwrt.org/docs/guide-user/services/media_server/minidlna)
 
-## piHole
+# piHole
 
-## RetroPi
+# RetroPi
 
-## rsync
+# rsync
