@@ -3,6 +3,9 @@
 # rpi linux etc setups
 For setups for projects using RPi
 
+# piCamera
+Timelapse of plant growth especially
+
 # RPI Wireless Printer server
 See these two websites with clear explanations  
 -[https://pimylifeup.com/raspberry-pi-print-server/](https://pimylifeup.com/raspberry-pi-print-server/)  
