@@ -1,3 +1,5 @@
+### <div style="text-align: right"> [View project on github](https://github.com/rusac/rpi)  
+</div>
 # rpi linux etc setups
 For setups for projects using RPi
 
