@@ -8,7 +8,9 @@ Write image to SD card to be used in Pi
 
 ### SSH
 
-copy an empty "ssh" file to main OS directory on SD card
+Copy an empty "ssh" file to main OS directory on SD card  
+
+Then follow this guide to set up public key authentication: https://www.raspberrypi.com/documentation/computers/remote-access.html#ssh  
 
 ### Wifi
 
