@@ -14,7 +14,7 @@ copy an empty "ssh" file to main OS directory on SD card
 
 a) create file "wpa_supplicant.conf" and copy it to main OS directory on SD card  
 b) add the following:  
-
+'''
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 country=<Insert 2 letter ISO 3166-1 country code here>
 update_config=1
@@ -23,11 +23,11 @@ network={
         ssid="networkname"
         psk="networkpassword"
 }
-
+'''
 Use command line to encrypt the password and use the result in place of the plain text version:  
-
+'''
 $ wpa_passphrase "networkpassword"  
-
+'''
 *Use quotations to help avoid issues with special characters  
 
 # piCamera
