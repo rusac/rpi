@@ -65,7 +65,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update  
 ```
-2. Install the Docker packages (incl. engine, cli, and compose).  
+2. Install the Docker packages #(incl. engine, cli, and compose).  
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  
 ```
