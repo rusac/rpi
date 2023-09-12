@@ -63,15 +63,15 @@ echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+sudo apt-get update  
 ```
-2. Install the Docker packages.
+2. Install the Docker packages.  
 ```
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  
 ```
-3. Verify that the Docker Engine installation is successful
+3. Verify that the Docker Engine installation is successful  
 ```
-sudo docker run hello-world
+sudo docker run hello-world  
 ```
 
 # piCamera
