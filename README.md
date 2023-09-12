@@ -37,6 +37,17 @@ c) To find the device on the network use:
 sudo nmap -sn 192.168.0.1/24  (or 192.168.0.0/24)
 ```
 
+# Ubuntu Server
+
+Install Ubuntu Server LTS 64bit (or 32 bit for Pi2) using guide here:  
+https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi  
+
+# Docker  
+
+Install Docker using guide here:  https://docs.docker.com/engine/install/  
+
+
+
 # piCamera
 Timelapse of plant growth especially
 
@@ -52,6 +63,16 @@ See these two websites with clear explanations
 ## miniDLNA
 -[https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/](https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/)  
 -[https://itigic.com/install-and-configure-dlna-minidlna-server-on-linux/](https://openwrt.org/docs/guide-user/services/media_server/minidlna)
+
+
+# Random useful CLI commands  
+
+nmap -sn 192.168.0.1/24  
+cat /etc/os-release  
+df -T  
+
+
+
 
 # piHole
 
