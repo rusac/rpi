@@ -32,6 +32,11 @@ $ wpa_passphrase "networkpassword"
 ```
 *Use quotations to help avoid issues with special characters  
 
+c) To find the device on the network use:  
+```
+sudo nmap -sn 192.168.0.1/24  (or 192.168.0.0/24)
+```
+
 # piCamera
 Timelapse of plant growth especially
 
