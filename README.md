@@ -65,7 +65,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update  
 ```
-2. Install the Docker packages.  
+2. Install the Docker packages (incl. engine, cli, and compose).  
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  
 ```
@@ -73,6 +73,28 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 sudo docker run hello-world  
 ```
+
+# Jellyfin  
+
+1. Create directories for media to be mounted to  
+```
+mkdir /mnt/Audio  
+mkdir /mnt/Movies  
+mkdir /mnt/TV
+mkdir /home/user/dockercontainerinfo #place config files here  
+etc  
+```
+
+2. Download image via docker
+```
+docker pull jellyfin/jellyfin
+```  
+3. Setup
+
+https://fleetstack.io/blog/mastering-jellyfin-on-raspberry-pi-2023-guide
+https://jellyfin.org/docs/general/installation/container/  
+
+
 
 # piCamera
 Timelapse of plant growth especially
@@ -94,8 +116,9 @@ See these two websites with clear explanations
 # Random useful CLI commands  
 
 nmap -sn 192.168.0.1/24  
+hostname -I  
 cat /etc/os-release  
-df -T  
+df -Th  
 
 
 
