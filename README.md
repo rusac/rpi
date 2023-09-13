@@ -84,13 +84,34 @@ mkdir /mnt/TV
 mkdir /home/user/dockercontainerinfo #place config files here  
 etc  
 ```
+Create cache and config folders  
+```
+mkdir /etc/docker/config   
+mkdir /etc/docker/cache  
+```  
 
 2. Download image via docker
 ```
 docker pull jellyfin/jellyfin
 ```  
-3. Setup
+3. Use Docker Compose to set up and mount volumes  
 
+a) Determine UUID for attached storage devices  
+```
+blkid
+```
+b) Ensure mount points are ready such as /mnt/Videos  
+
+c) Edit /etc/fstab so that devices are mounted on boot  
+```
+LABEL=writable  /       ext4    discard,errors=remount-ro       0 1
+LABEL=system-boot       /boot/firmware  vfat    defaults        0       1
+UUID=UUIDnumbergoeshere  /mnt/Videos ext4 defaults 0 0
+
+```
+
+
+https://stacktracing.com/jellyfin-with-docker-compose/  
 https://fleetstack.io/blog/mastering-jellyfin-on-raspberry-pi-2023-guide
 https://jellyfin.org/docs/general/installation/container/  
 
@@ -119,6 +140,8 @@ nmap -sn 192.168.0.1/24
 hostname -I  
 cat /etc/os-release  
 df -Th  
+lsblk  
+
 
 
 
