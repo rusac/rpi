@@ -73,6 +73,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 sudo docker run hello-world  
 ```
+4. Container management  
+
+Basic Docker Commands
+https://docs.docker.com/get-started/docker_cheatsheet.pdf  
+
+
 
 # Jellyfin  
 
@@ -81,8 +87,8 @@ sudo docker run hello-world
 mkdir /mnt/Audio  
 mkdir /mnt/Movies  
 mkdir /mnt/TV
-mkdir /home/user/dockercontainerinfo/config
-mkdir /home/user/dockercontainerinfo/cache  
+mkdir /home/user/dockercontainerinfo/config   #in user directory due to permissions  
+mkdir /home/user/dockercontainerinfo/cache    # ^^^  
 etc  
 ```
 2. Mount storage devices and edit /etc/fstab file so devices are mounted on boot  
@@ -103,8 +109,7 @@ UUID=UUIDnumbergoeshere  /mnt/Videos    ext4 defaults 0 0
 ```
 docker pull jellyfin/jellyfin
 ```  
-4. Use Docker Compose to set up and mount volumes  
-
+4. Use Docker Compose to set up and mount volumes, ie. edit the docker-compose.yml file  
 ```
 version: '3.5'
 services:
@@ -117,6 +122,7 @@ services:
       - /home/user/dockerdirectory/config:/config
       - /home/user/dockerdirectory/cache:/cache
       - /mnt/mediamedia:/media
+      - /mnt/harddrive/videos/documentaries:/documentary
       - /mnt/audiomusic:/audio:ro
       - /mnt/othermusic:/audio2:ro
     restart: 'unless-stopped'
@@ -127,7 +133,12 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
 ```
-
+5. Run jellyfin via docker:
+```
+docker compose up
+docker compose up -d      # to run in background
+```
+Access jellyfin via browser at 192.168.x.x:8096.  
 
 
 
