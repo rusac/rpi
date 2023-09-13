@@ -81,34 +81,54 @@ sudo docker run hello-world
 mkdir /mnt/Audio  
 mkdir /mnt/Movies  
 mkdir /mnt/TV
-mkdir /home/user/dockercontainerinfo #place config files here  
+mkdir /home/user/dockercontainerinfo/config
+mkdir /home/user/dockercontainerinfo/cache  
 etc  
 ```
-Create cache and config folders  
-```
-mkdir /etc/docker/config   
-mkdir /etc/docker/cache  
-```  
-
-2. Download image via docker
-```
-docker pull jellyfin/jellyfin
-```  
-3. Use Docker Compose to set up and mount volumes  
-
+2. Mount storage devices and edit /etc/fstab file so devices are mounted on boot  
 a) Determine UUID for attached storage devices  
 ```
 blkid
 ```
-b) Ensure mount points are ready such as /mnt/Videos  
+b) Ensure mount points are ready such as /mnt/Videos, /mnt/Movies, etc  
 
 c) Edit /etc/fstab so that devices are mounted on boot  
 ```
 LABEL=writable  /       ext4    discard,errors=remount-ro       0 1
 LABEL=system-boot       /boot/firmware  vfat    defaults        0       1
-UUID=UUIDnumbergoeshere  /mnt/Videos ext4 defaults 0 0
+UUID=UUIDnumbergoeshere  /mnt/Videos    ext4 defaults 0 0
 
 ```
+3. Download image via docker
+```
+docker pull jellyfin/jellyfin
+```  
+4. Use Docker Compose to set up and mount volumes  
+
+```
+version: '3.5'
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    user: uid:gid             # uid = user id; gid = group id; type "id" at prompt to find values
+    network_mode: 'host'
+    volumes:
+      - /home/user/dockerdirectory/config:/config
+      - /home/user/dockerdirectory/cache:/cache
+      - /mnt/mediamedia:/media
+      - /mnt/audiomusic:/audio:ro
+      - /mnt/othermusic:/audio2:ro
+    restart: 'unless-stopped'
+    # Optional - alternative address used for autodiscovery
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://example.com
+    # Optional - may be necessary for docker healthcheck to pass if running in host network mode
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+```
+
+
 
 
 https://stacktracing.com/jellyfin-with-docker-compose/  
