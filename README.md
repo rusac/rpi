@@ -137,6 +137,8 @@ services:
 ```
 docker compose up
 docker compose up -d      # to run in background
+docker compose down        # to shut docker container down
+docker ps                # lists all containers
 ```
 Access jellyfin via browser at 192.168.x.x:8096.  
 
