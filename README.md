@@ -58,7 +58,7 @@ sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
-# Add the repository to Apt sources:
+2. Add the repository to Apt sources:
 ```
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
@@ -66,15 +66,15 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update  
 ```
-2. Install the Docker packages #(incl. engine, cli, and compose).  
+3. Install the Docker packages #(incl. engine, cli, and compose).  
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  
 ```
-3. Verify that the Docker Engine installation is successful  
+4. Verify that the Docker Engine installation is successful  
 ```
 sudo docker run hello-world  
 ```
-4. Container management  
+5. Container management  
 
 Basic Docker Commands
 https://docs.docker.com/get-started/docker_cheatsheet.pdf  
