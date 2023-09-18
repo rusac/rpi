@@ -57,8 +57,9 @@ sudo apt-get install ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
+```
 # Add the repository to Apt sources:
+```
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
@@ -103,7 +104,6 @@ c) Edit /etc/fstab so that devices are mounted on boot
 LABEL=writable  /       ext4    discard,errors=remount-ro       0 1
 LABEL=system-boot       /boot/firmware  vfat    defaults        0       1
 UUID=UUIDnumbergoeshere  /mnt/Videos    ext4 defaults 0 0
-
 ```
 3. Download image via docker
 ```
