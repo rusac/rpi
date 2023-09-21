@@ -178,7 +178,27 @@ https://stacktracing.com/jellyfin-with-docker-compose/
 https://fleetstack.io/blog/mastering-jellyfin-on-raspberry-pi-2023-guide
 https://jellyfin.org/docs/general/installation/container/  
 
+# sonarr  
 
+Create docker compose file as with jellyfin. Enter the following and adjust:  
+```
+version: "3.7"
+
+services:
+  sonarr:
+    container_name: sonarr
+    image: ghcr.io/hotio/sonarr
+    ports:
+      - "8989:8989"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Etc/UTC
+    volumes:
+      - /<host_folder_config>:/config
+      - /<host_folder_data>:/data
+```
 
 # piCamera
 Timelapse of plant growth especially
