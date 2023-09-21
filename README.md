@@ -201,6 +201,7 @@ See these two websites with clear explanations
 
 nmap -sn 192.168.0.1/24  
 hostname -I  
+ip addr  
 cat /etc/os-release  
 df -Th  
 lsblk  
