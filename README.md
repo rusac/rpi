@@ -172,11 +172,16 @@ docker ps                # lists all containers
 ```
 Access jellyfin via browser at 192.168.x.x:8096.  
 
-
-
 https://stacktracing.com/jellyfin-with-docker-compose/  
 https://fleetstack.io/blog/mastering-jellyfin-on-raspberry-pi-2023-guide
 https://jellyfin.org/docs/general/installation/container/  
+
+6. Set up jellyfin client on pi:
+
+Download file from here: https://kodi.jellyfin.org/repository.jellyfin.kodi.zip  
+and copy it to sd-card of client OS.  
+
+Start Libreelec/Kodi and follow instructions here: https://jellyfin.org/docs/general/clients/kodi/  
 
 # sonarr  
 
