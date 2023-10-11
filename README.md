@@ -205,6 +205,11 @@ services:
       - /mnt/movies:/media/movies
       - /mnt/audio:/media/audio
       - /mnt/video:/media/video
+      # Persistent volume so that the database survives system reboots and container restarts
+      # Had to add this afterwards because new database was being created each time container
+      # was restarted. Files are now stored inside the folder with the docker-compose.yml file.
+      - './data:/minidlna'
+      - '/etc/localtime:/etc/localtime:ro'
     network_mode: host
     environment:
       db_dir=/home/user/directorytosavedatabaseandcache
