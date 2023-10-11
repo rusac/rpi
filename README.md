@@ -183,6 +183,51 @@ and copy it to sd-card of client OS.
 
 Start Libreelec/Kodi and follow instructions here: https://jellyfin.org/docs/general/clients/kodi/  
 
+# miniDLNA (use as alternative to jellyfin)  
+
+1. Download image via docker
+```
+docker pull vladgh/minidlna
+```  
+2. Use Docker Compose to set up and mount volumes, ie. edit the docker-compose.yml file
+```  
+version: '3'
+
+services:
+  dlna:
+    image: vladgh/minidlna
+    container_name: minidlna
+    restart: 'unless-stopped'
+    # Use same settings for directories below as used for jellyfin;
+    # Directories should be mounted beforehand in fstab
+    volumes:
+      - /mnt/movies:/media/movies
+      - /mnt/audio:/media/audio
+      - /mnt/video:/media/video
+    network_mode: host
+    environment:
+      # Unsure if below is necessary
+      #PUID=<your-uid>
+      #PGID=<your-gid>
+      MINIDLNA_MEDIA_DIR_1: /media/audio
+      MINIDLNA_MEDIA_DIR_2: /media/video
+      MINIDLNA_FRIENDLY_NAME: pc
+      MINIDLNA_MAX_CONNECTIONS=7
+      MINIDLNA_SERIAL=15161881
+      MINIDLNA_MODEL_NUMBER=1
+      # Default port is 8200
+      MINIDLNA_PORT=8200
+
+```  
+3. Run miniDLNA via docker:
+```  
+docker compose up
+docker compose up -d      # to run in background
+docker compose down        # to shut docker container down
+docker ps                # lists all containers
+```
+4. Access miniDLNA from client via host ip address at port 8200  
+
 # sonarr  
 
 Create docker compose file as with jellyfin. Enter the following and adjust:  
