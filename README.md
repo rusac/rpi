@@ -192,7 +192,6 @@ docker pull vladgh/minidlna
 2. Use Docker Compose to set up and mount volumes, ie. edit the docker-compose.yml file
 ```  
 version: '3'
-
 services:
   dlna:
     image: vladgh/minidlna
@@ -216,9 +215,9 @@ services:
       MINIDLNA_SERIAL=15161881
       MINIDLNA_MODEL_NUMBER=1
       # Default port is 8200
-      MINIDLNA_PORT=8200
+      MINIDLNA_PORT=8200  
+```
 
-```  
 3. Run miniDLNA via docker:
 ```  
 docker compose up
