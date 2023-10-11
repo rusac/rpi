@@ -184,7 +184,8 @@ and copy it to sd-card of client OS.
 Start Libreelec/Kodi and follow instructions here: https://jellyfin.org/docs/general/clients/kodi/  
 
 # miniDLNA (use as alternative to jellyfin)  
-- [miniDLNA manual](https://manpages.ubuntu.com/manpages/xenial/man5/minidlna.conf.5.html)
+- [miniDLNA manual](https://manpages.ubuntu.com/manpages/xenial/man5/minidlna.conf.5.html)  
+- Note: set permissions to shared files/directories to 755 ie. chmod -R 755 /directory
 
 1. Download image via docker
 ```
@@ -206,6 +207,7 @@ services:
       - /mnt/video:/media/video
     network_mode: host
     environment:
+      db_dir=/home/user/directorytosavedatabaseandcache
       # Unsure if below is necessary
       #PUID=<your-uid>
       #PGID=<your-gid>
