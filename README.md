@@ -184,6 +184,7 @@ and copy it to sd-card of client OS.
 Start Libreelec/Kodi and follow instructions here: https://jellyfin.org/docs/general/clients/kodi/  
 
 # miniDLNA (use as alternative to jellyfin)  
+- [miniDLNA manual](https://manpages.ubuntu.com/manpages/xenial/man5/minidlna.conf.5.html)
 
 1. Download image via docker
 ```
