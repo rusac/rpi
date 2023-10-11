@@ -228,6 +228,11 @@ docker ps                # lists all containers
 ```
 4. Access miniDLNA from client via host ip address at port 8200  
 
+5. Error msg to figure out:
+```
+monitor_inotify.c:223: warn: WARNING: Inotify max_user_watches [8192] is low or close to the number of used watches [1729] and I do not have permission to increase this limit.  Please do so manually by writing a higher value into /proc/sys/fs/inotify/max_user_watches.
+```
+
 # sonarr  
 
 Create docker compose file as with jellyfin. Enter the following and adjust:  
